@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
@@ -17,13 +18,25 @@
     "node": ">=22.12.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
     "@eslint/js": "^9.17.0",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
     "prettier": "^3.4.2",
     "typescript-eslint": "^8.18.1"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,txs}": [
+      "eslint --fix ."
+    ],
+    "**/*": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
