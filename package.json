@@ -8,7 +8,8 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "prepare": "husky",
-    "common": "pnpm --filter common"
+    "common": "pnpm --filter common",
+    "app": "pnpm --filter web-app"
   },
   "keywords": [],
   "author": "",
@@ -34,7 +35,7 @@
   },
   "lint-staged": {
     "**/*.{js,ts,txs}": [
-      "eslint --fix ."
+      "eslint --fix"
     ],
     "**/*": [
       "prettier --write --ignore-unknown"
