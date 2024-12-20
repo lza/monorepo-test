@@ -8,7 +8,8 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "prepare": "husky",
-    "common": "pnpm --filter common"
+    "common": "pnpm --filter common",
+    "app": "pnpm --filter web-app"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +27,8 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.14.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
@@ -39,5 +42,10 @@
     "**/*": [
       "prettier --write --ignore-unknown"
     ]
+  },
+  "pnpm": {
+    "overrides": {
+      "esbuild": "0.24.0"
+    }
   }
 }
