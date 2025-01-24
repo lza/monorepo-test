@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write .",
+    "format:svg": "prettier --write '**/*.svg' --parser 'html'",
+    "format": "prettier --write . && pnpm format:svg",
     "lint": "eslint .",
     "prepare": "husky",
     "common": "pnpm --filter common",
@@ -34,12 +35,14 @@
     "husky": "^9.1.7",
     "lint-staged": "^15.4.1",
     "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.10",
     "typescript-eslint": "^8.21.0"
   },
   "lint-staged": {
     "**/*.{js,mjs,cjs,ts,jsx,tsx}": [
       "eslint --fix"
     ],
+    "**/*.svg": "prettier --write --ignore-unknown --parser 'html'",
     "**/*": [
       "prettier --write --ignore-unknown"
     ]
